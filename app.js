@@ -41,7 +41,7 @@ const slides = [
     title: "Azúcar y política",
     icon: "🍬",
     visualTitle: "Economía dependiente",
-    image: "assets/diapo 4.png",
+    image: "assets/diapo 4.jpeg",
     bullets: [
       "1940–1944: Batista fue elegido presidente; fortaleció la educación y las relaciones con Estados Unidos, e incrementó la exportación de azúcar.",
       "1944–1948: Grau fue elegido presidente por el Partido Revolucionario.",
