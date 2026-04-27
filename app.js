@@ -2,7 +2,7 @@ const slides = [
   {
     number: 1,
     title: "Antecedentes de la revolución",
-    icon: "assets/diapo 1.png",
+    icon: "⚖️",
     visualTitle: "Cuba, Estados Unidos y soberanía",
     image: "assets/diapo 1.png",
     bullets: [
