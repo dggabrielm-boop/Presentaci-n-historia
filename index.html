@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Una isla a 145 km de Florida</title>
+  <meta name="description" content="Presentación interactiva sobre antecedentes, causas y triunfo de la Revolución cubana." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="deck" aria-live="polite">
+    <div class="topbar">
+      <div>
+        <p class="eyebrow">Presentación interactiva</p>
+        <h1>Una isla a 145 km de Florida</h1>
+      </div>
+      <div class="counter" id="counter">1 / 16</div>
+    </div>
+
+    <div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
+
+    <section class="slide" id="slide" tabindex="-1"></section>
+
+    <nav class="controls" aria-label="Controles de la presentación">
+      <button id="prevBtn" type="button">← Anterior</button>
+      <button id="menuBtn" type="button">Índice</button>
+      <button id="fullscreenBtn" type="button">Pantalla completa</button>
+      <button id="nextBtn" type="button">Siguiente →</button>
+    </nav>
+
+    <aside class="drawer" id="drawer" aria-label="Índice de diapositivas" hidden>
+      <div class="drawer__head">
+        <strong>Índice</strong>
+        <button id="closeDrawerBtn" type="button" aria-label="Cerrar índice">×</button>
+      </div>
+      <div id="slideList" class="slide-list"></div>
+    </aside>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
