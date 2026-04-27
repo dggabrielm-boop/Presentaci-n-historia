@@ -4,6 +4,7 @@ const slides = [
     title: "Antecedentes de la revolución",
     icon: "⚖️",
     visualTitle: "Cuba, Estados Unidos y soberanía",
+    background: "assets/fondo.png",
     image: "assets/diapo 1.png",
     bullets: [
       "1898: Independencia tardía de España con apoyo de Estados Unidos durante la Guerra Hispanoamericana.",
