@@ -4,6 +4,7 @@ const slides = [
     title: "Antecedentes de la revolución",
     icon: "🗺️",
     visualTitle: "Cuba, Estados Unidos y soberanía",
+    image: "assets/cuba1.jpg",
     bullets: [
       "1898: Independencia tardía de España con apoyo de Estados Unidos durante la Guerra Hispanoamericana.",
       "1901: Enmienda Platt: derecho de Estados Unidos de intervenir en los asuntos cubanos.",
