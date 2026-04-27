@@ -211,6 +211,8 @@ function renderSlide() {
   prevBtn.disabled = current === 0;
   nextBtn.disabled = current === slides.length - 1;
   slideEl.className = `slide ${slide.quiz ? "slide--quiz" : ""}`;
+  slideEl.style.backgroundImage = slide.background ? `url('${slide.background}')` : "";
+  slideEl.classList.toggle("slide--background", Boolean(slide.background));
 
   if (slide.quiz) {
     slideEl.innerHTML = renderQuiz(slide);
