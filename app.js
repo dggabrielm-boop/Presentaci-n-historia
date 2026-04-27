@@ -17,6 +17,7 @@ const slides = [
     title: "Ramón Grau: presidente provisional",
     icon: "⚖️",
     visualTitle: "Reformas y presión política",
+    image: "assets/diapo 2.png",
     bullets: [
       "1933: abolición de la Enmienda Platt, voto femenino, salario mínimo y trabajo para los nacidos en Cuba.",
       "1934: reformas exigidas por el Partido Socialista y renuncia presidencial obligada por Fulgencio Batista."
@@ -28,6 +29,7 @@ const slides = [
     title: "Elecciones",
     icon: "🗳️",
     visualTitle: "Presidencias bajo influencia militar",
+    image: "assets/diapo 3.png",
     bullets: [
       "1933–1940: alianza de Batista con el Partido Socialista y los sindicatos.",
       "Elección de presidentes marioneta: Carlos Hevia, Manuel Márquez Sterling, Carlos Mendieta, José A. Barnet y Federico Laredo Brú.",
@@ -39,6 +41,7 @@ const slides = [
     title: "Azúcar y política",
     icon: "🍬",
     visualTitle: "Economía dependiente",
+    image: "assets/diapo 4.png",
     bullets: [
       "1940–1944: Batista fue elegido presidente; fortaleció la educación y las relaciones con Estados Unidos, e incrementó la exportación de azúcar.",
       "1944–1948: Grau fue elegido presidente por el Partido Revolucionario.",
