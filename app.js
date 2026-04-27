@@ -234,12 +234,18 @@ function renderContentSlide(slide) {
       ${slide.badges ? `<div class="badges">${slide.badges.map(b => `<span class="badge">${b}</span>`).join("")}</div>` : ""}
     </article>
     <aside class="visual" aria-label="Idea gráfica">
-      <div>
-        <div class="visual__icon">${slide.icon}</div>
-        <div class="visual__title">${slide.visualTitle}</div>
-        <p class="visual__caption">Sustituye este bloque por una imagen en la carpeta assets si quieres usar material propio.</p>
-      </div>
-    </aside>
+  ${slide.image ? `
+    <div class="visual-image">
+      <img src="${slide.image}" alt="${slide.visualTitle || slide.title}">
+    </div>
+  ` : `
+    <div>
+      <div class="visual__icon">${slide.icon}</div>
+      <div class="visual__title">${slide.visualTitle}</div>
+      <p class="visual__caption">Sustituye este bloque por una imagen en la carpeta assets si quieres usar material propio.</p>
+    </div>
+  `}
+</aside>
   `;
 }
 
