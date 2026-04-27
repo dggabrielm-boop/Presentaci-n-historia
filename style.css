@@ -445,3 +445,23 @@ button:disabled { opacity: .35; cursor: not-allowed; transform: none; }
   mix-blend-mode: multiply;
   pointer-events: none;
 }
+.slide--background {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+.slide--background::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.48);
+  z-index: 0;
+}
+
+.slide--background > * {
+  position: relative;
+  z-index: 1;
+}
