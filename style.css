@@ -177,4 +177,87 @@ blockquote cite { display: block; margin-top: 8px; font-family: var(--font-body)
   .cover__visual { min-height: 42vh; clip-path: none; order: -1; }
   .cover h1 { font-size: clamp(3.4rem,17vw,6rem); }
 }
+
+/* Modo de inserción 16:9 para LMS/NEO: mantiene la composición apaisada a 800 px. */
+html.embed-mode,
+html.embed-mode body { width: 100%; height: 100%; min-height: 0; overflow: hidden; }
+.embed-mode .app { height: 100dvh; min-height: 0; grid-template-rows: 4px 1fr; }
+.embed-mode .appbar { display: none; }
+.embed-mode .stage { display: grid; place-items: center; min-height: 0; padding: 0; overflow: hidden; }
+.embed-mode .slide {
+  width: min(100vw, calc(177.78dvh - 8px));
+  min-height: 0;
+  max-height: none;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  box-shadow: none;
+}
+.embed-mode .layout,
+.embed-mode .characters-layout,
+.embed-mode .video-layout,
+.embed-mode .causes-layout,
+.embed-mode .quiz-layout {
+  grid-template-columns: 1.08fr .92fr;
+  height: 100%;
+  gap: clamp(18px, 3vw, 32px);
+  padding: clamp(22px, 3.5vw, 38px);
+}
+.embed-mode .layout--profile { grid-template-columns: .78fr 1.22fr; }
+.embed-mode .characters-layout { grid-template-columns: .9fr 1.1fr; }
+.embed-mode .video-layout { grid-template-columns: .78fr 1.22fr; }
+.embed-mode .causes-layout { grid-template-columns: 1.22fr .78fr; }
+.embed-mode .quiz-layout { grid-template-columns: 1.2fr .8fr; padding-right: 0; }
+.embed-mode h2 { margin: 8px 0 11px; font-size: clamp(1.55rem, 3.6vw, 2.35rem); }
+.embed-mode .video-layout h2 { font-size: clamp(1.25rem, 2.45vw, 1.85rem); }
+.embed-mode .kicker,
+.embed-mode .label { padding: 5px 7px; font-size: clamp(.5rem, .72vw, .64rem); }
+.embed-mode .bullet-list { gap: 2px; }
+.embed-mode .bullet-list li { padding: 4px 5px 4px 20px; font-size: clamp(.68rem, 1.22vw, .82rem); line-height: 1.2; }
+.embed-mode .bullet-list li::before { top: 11px; width: 11px; height: 3px; }
+.embed-mode .timeline { gap: 7px; }
+.embed-mode .timeline__event { padding: 7px 8px; }
+.embed-mode .timeline__event strong { font-size: .86rem; }
+.embed-mode .timeline__event p { font-size: clamp(.61rem, 1.05vw, .72rem); line-height: 1.18; }
+.embed-mode .tags { margin-top: 9px; gap: 5px; }
+.embed-mode .tags span { padding: 5px 7px; font-size: .62rem; }
+.embed-mode blockquote { margin-top: 9px; padding: 9px 12px; font-size: clamp(.7rem, 1.2vw, .85rem); }
+.embed-mode .character-strip { height: 78%; }
+.embed-mode .archive-image img,
+.embed-mode .map-image img,
+.embed-mode .portrait img { max-height: 390px; }
+.embed-mode .archive-image--tall img { height: min(390px, 82dvh); }
+.embed-mode .quiz-panel h2 { font-size: clamp(1.35rem, 2.75vw, 2rem); }
+.embed-mode .quiz-instruction { margin-bottom: 7px; font-size: .66rem; }
+.embed-mode .options { grid-template-columns: 1fr 1fr; gap: 5px; }
+.embed-mode .option { min-height: 48px; padding: 6px 7px; grid-template-columns: 25px 1fr; gap: 6px; font-size: clamp(.62rem, 1.05vw, .74rem); }
+.embed-mode .option > span { width: 23px; height: 23px; }
+.embed-mode .feedback { min-height: 38px; margin-top: 5px; padding: 6px 8px; font-size: .66rem; }
+.embed-mode .controls {
+  position: fixed;
+  z-index: 60;
+  right: 8px;
+  bottom: 8px;
+  min-height: 0;
+  gap: 5px;
+  padding: 5px;
+  border-radius: 5px;
+  background: rgba(21, 41, 65, .93);
+  box-shadow: 0 5px 18px rgba(0,0,0,.2);
+}
+.embed-mode .controls__hint,
+.embed-mode .controls .secondary { display: none; }
+.embed-mode .controls button { padding: 6px 9px; font-size: .68rem; }
+.embed-mode .cover {
+  width: 100%;
+  height: 100%;
+  grid-template-columns: .95fr 1.05fr;
+  overflow: hidden;
+}
+.embed-mode .cover__copy { padding: clamp(22px, 4vw, 38px); padding-right: 14px; }
+.embed-mode .cover__visual { min-height: 0; clip-path: polygon(12% 0,100% 0,100% 100%,0 100%); order: initial; }
+.embed-mode .cover h1 { font-size: clamp(2.7rem, 6.8vw, 4rem); }
+.embed-mode .cover__eyebrow { margin: 11px 0 6px; font-size: .6rem; }
+.embed-mode .cover__lead { margin: 12px 0; font-size: clamp(.68rem, 1.25vw, .82rem); line-height: 1.35; }
+.embed-mode .start-button { gap: 10px; padding: 8px 11px; font-size: .72rem; }
+.embed-mode .cover__distance { font-size: .8rem; }
 @media (prefers-reduced-motion: reduce) { *,*::before,*::after { animation-duration:.01ms!important; transition-duration:.01ms!important; } }
