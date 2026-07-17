@@ -1,335 +1,153 @@
-const slides = [
-  {
-    number: 1,
-    title: "Antecedentes de la revolución",
-    icon: "⚖️",
-    visualTitle: "Cuba, Estados Unidos y soberanía",
-    background: "assets/fondo.png",
-    image: "assets/diapo 1.png",
-    bullets: [
-      "1898: Independencia tardía de España con apoyo de Estados Unidos durante la Guerra Hispanoamericana.",
-      "1901: Enmienda Platt: derecho de Estados Unidos de intervenir en los asuntos cubanos.",
-      "1925–1933: dictadura de Machado y proyecto de Regeneración Nacional.",
-      "1933: golpe de Estado liderado por Fulgencio Batista y nombramiento de Ramón Grau San Martín."
-    ]
-  },
-  {
-    number: 2,
-    title: "Ramón Grau: presidente provisional",
-    icon: "⚖️",
-    visualTitle: "Reformas y presión política",
-    image: "assets/diapo 2.png",
-    bullets: [
-      "1933: abolición de la Enmienda Platt, voto femenino, salario mínimo y trabajo para los nacidos en Cuba.",
-      "1934: reformas exigidas por el Partido Socialista y renuncia presidencial obligada por Fulgencio Batista."
-    ],
-    badges: ["Voto femenino", "Salario mínimo", "Soberanía"]
-  },
-  {
-    number: 3,
-    title: "Elecciones",
-    icon: "🗳️",
-    visualTitle: "Presidencias bajo influencia militar",
-    image: "assets/diapo 3.png",
-    bullets: [
-      "1933–1940: alianza de Batista con el Partido Socialista y los sindicatos.",
-      "Elección de presidentes marioneta: Carlos Hevia, Manuel Márquez Sterling, Carlos Mendieta, José A. Barnet y Federico Laredo Brú.",
-      "1934: Constitución progresista: jornada de 8 horas, educación y justicia social."
-    ]
-  },
-  {
-    number: 4,
-    title: "Azúcar y política",
-    icon: "🍬",
-    visualTitle: "Economía dependiente",
-    image: "assets/diapo 4.jpeg",
-    bullets: [
-      "1940–1944: Batista fue elegido presidente; fortaleció la educación y las relaciones con Estados Unidos, e incrementó la exportación de azúcar.",
-      "1944–1948: Grau fue elegido presidente por el Partido Revolucionario.",
-      "Estados Unidos controlaba el 40% de la producción de azúcar y el 50% del transporte ferroviario.",
-      "El crimen organizado estadounidense y la corrupción prosperaron en la isla."
-    ]
-  },
-  {
-    number: 5,
-    title: "Dictadura de Batista",
-    icon: "🚨",
-    visualTitle: "Golpe de Estado de 1952",
-    bullets: [
-      "1952: Batista retornó a la isla como candidato presidencial.",
-      "Después de las elecciones, dio un golpe de Estado y se nombró a sí mismo presidente provisional.",
-      "La policía y el ejército suprimieron toda la oposición."
-    ]
-  },
-  {
-    number: 6,
-    quiz: true,
-    question: "En la primera mitad del siglo XX Estados Unidos intervino en Cuba a través de:",
-    options: [
-      "El control absoluto de la producción azucarera.",
-      "El crimen organizado que promovió el tráfico de drogas.",
-      "La Enmienda Platt.",
-      "La imposición de Fulgencio Batista como presidente provisional."
-    ],
-    correct: 2
-  },
-  {
-    number: 7,
-    title: "Fidel Castro y los revolucionarios",
-    icon: "🔥",
-    visualTitle: "Nacionalismo y oposición armada",
-    bullets: [
-      "Movimiento liderado por profesionales, intelectuales de clase media, ortodoxos radicales y personajes de la élite.",
-      "Inspirados por el nacionalismo de José Martí, el heroísmo de Chibás y los revolucionarios independentistas."
-    ],
-    quote: "“Si Batista llegó al poder por la fuerza, debemos sacarlo por la fuerza”. — Fidel Castro"
-  },
-  {
-    number: 8,
-    quiz: true,
-    question: "Los líderes revolucionarios cubanos fueron:",
-    options: [
-      "Infiltrados soviéticos que llegaron a la isla en la década de los cincuenta.",
-      "Guerrilleros de toda Latinoamérica que llegaron a la isla en la década de los cuarenta.",
-      "Profesionales, intelectuales, sectores de la clase media y nacionalistas.",
-      "Militares cubanos inconformes."
-    ],
-    correct: 2
-  },
-  {
-    number: 9,
-    title: "Derrota inicial",
-    icon: "🏛️",
-    visualTitle: "Cuartel de Moncada",
-    bullets: [
-      "1953: ataque revolucionario a la armada de Santiago, Cuartel de Moncada: 61 muertos y decenas de detenidos.",
-      "Fidel Castro fue condenado a 15 años de prisión.",
-      "1955: amnistía para Castro y exilio en México.",
-      "Creación del Movimiento 26 de Julio y alianza con Ernesto “Che” Guevara."
-    ]
-  },
-  {
-    number: 10,
-    quiz: true,
-    question: "¿Cuál fue la importancia del ataque al cuartel de Moncada en 1953?",
-    options: [
-      "Fue un gran triunfo revolucionario.",
-      "Los revolucionarios consiguieron armas y municiones.",
-      "Los revolucionarios obtuvieron visibilidad pública.",
-      "Los revolucionarios tomaron como rehén a Batista."
-    ],
-    correct: 2
-  },
-  {
-    number: 11,
-    title: "La victoria revolucionaria",
-    icon: "⛰️",
-    visualTitle: "Granma y Sierra Maestra",
-    bullets: [
-      "1956: 82 rebeldes viajaron desde México en el Granma, fueron descubiertos por el régimen de Batista y huyeron a la Sierra Maestra.",
-      "1957: entrevista en la Sierra Maestra e intento de tomar el Palacio Presidencial.",
-      "Sangrienta persecución contra los revolucionarios.",
-      "Castro respondió con el manifiesto de 1957: elecciones, reforma agraria y alfabetización masiva."
-    ]
-  },
-  {
-    number: 12,
-    title: "El triunfo de la revolución",
-    icon: "🎆",
-    visualTitle: "Enero de 1959",
-    bullets: [
-      "1958: apoyo comunista y bloqueo de La Habana.",
-      "Estados Unidos retiró su apoyo a Batista, quien convocó a elecciones que fueron boicoteadas. Control revolucionario de Santiago.",
-      "1959: el 1 de enero Batista renunció y huyó a República Dominicana con 424 millones de dólares de la reserva nacional.",
-      "Dos días después, el Movimiento 26 de Julio tomó el control del país."
-    ]
-  },
-  {
-    number: 13,
-    title: "Entrevista a Fidel Castro",
-    icon: "🎥",
-    visualTitle: "Triunfo de la Revolución",
-    bullets: [
-      "Explora con curiosidad esta entrevista a Fidel Castro en el momento del triunfo de la revolución."
-    ],
-    video: "https://www.youtube.com/embed/lo4hOus5TKc",
-    link: "https://www.youtube.com/watch?v=lo4hOus5TKc"
-  },
-  {
-    number: 14,
-    title: "Pausa de conexión",
-    icon: "🧭",
-    visualTitle: "Del antecedente a la causa",
-    bullets: [
-      "Observa cómo se conectan intervención externa, dependencia económica, autoritarismo y movilización social.",
-      "La siguiente sección sintetiza las causas económicas, sociales y políticas de la Revolución cubana."
-    ],
-    badges: ["Intervención", "Dependencia", "Autoritarismo", "Movilización"]
-  },
-  {
-    number: 15,
-    title: "Causas de la Revolución cubana",
-    icon: "📌",
-    visualTitle: "Tres dimensiones",
-    bullets: [
-      "Económicas: dependencia del monocultivo y del mercado externo, desempleo, subempleo, desigualdad extrema y poca inversión industrial.",
-      "Sociales: demandas insatisfechas de la población urbana, clase media, industriales y sindicatos; inequidad, crecimiento urbano y analfabetismo.",
-      "Políticas: vínculos de Batista con la corrupción y las mafias."
-    ],
-    badges: ["Económicas", "Sociales", "Políticas"]
-  },
-  {
-    number: 16,
-    quiz: true,
-    question: "Son causas de la Revolución cubana:",
-    options: [
-      "La intervención chino-soviética en la región.",
-      "Las demandas insatisfechas del pueblo cubano.",
-      "La intervención armada de los Estados Unidos.",
-      "La invasión de guerrillas centroamericanas."
-    ],
-    correct: 1
-  }
-];
-
-let current = 0;
+const deck = window.PRESENTATION.slides;
 const slideEl = document.getElementById("slide");
 const counterEl = document.getElementById("counter");
+const scoreLabel = document.getElementById("scoreLabel");
 const progressBar = document.getElementById("progressBar");
-const prevBtn = document.getElementById("prevBtn");
-const nextBtn = document.getElementById("nextBtn");
-const menuBtn = document.getElementById("menuBtn");
-const fullscreenBtn = document.getElementById("fullscreenBtn");
+const prevButton = document.getElementById("prevButton");
+const nextButton = document.getElementById("nextButton");
 const drawer = document.getElementById("drawer");
-const closeDrawerBtn = document.getElementById("closeDrawerBtn");
+const scrim = document.getElementById("scrim");
 const slideList = document.getElementById("slideList");
+const cover = document.getElementById("cover");
+let current = 0;
+const answered = new Map();
 
-function renderSlide() {
-  const slide = slides[current];
-  counterEl.textContent = `${slide.number} / ${slides.length}`;
-  progressBar.style.width = `${((current + 1) / slides.length) * 100}%`;
-  prevBtn.disabled = current === 0;
-  nextBtn.disabled = current === slides.length - 1;
-  slideEl.className = `slide ${slide.quiz ? "slide--quiz" : ""}`;
-  slideEl.style.backgroundImage = slide.background ? `url('${slide.background}')` : "";
-  slideEl.classList.toggle("slide--background", Boolean(slide.background));
+const escapeHtml = value => String(value).replace(/[&<>'"]/g, char => ({
+  "&": "&amp;", "<": "&lt;", ">": "&gt;", "'": "&#39;", '"': "&quot;"
+}[char]));
 
-  if (slide.quiz) {
-    slideEl.innerHTML = renderQuiz(slide);
-    attachQuizHandlers(slide);
-  } else if (slide.video) {
-    slideEl.innerHTML = renderVideoSlide(slide);
-  } else {
-    slideEl.innerHTML = renderContentSlide(slide);
-  }
-
-  renderSlideList();
-  slideEl.focus({ preventScroll: true });
+function image(path, alt, className = "") {
+  return `<img class="${className}" src="${path}" alt="${escapeHtml(alt || "")}">`;
 }
 
-function renderContentSlide(slide) {
-  return `
-    <article>
-      <span class="kicker">Diapo ${slide.number}</span>
-      <h2>${slide.title}</h2>
-      <ul class="content-list">${slide.bullets.map(item => `<li>${item}</li>`).join("")}</ul>
-      ${slide.quote ? `<div class="quote">${slide.quote}</div>` : ""}
-      ${slide.badges ? `<div class="badges">${slide.badges.map(b => `<span class="badge">${b}</span>`).join("")}</div>` : ""}
-    </article>
-    <aside class="visual" aria-label="Idea gráfica">
-  ${slide.image ? `
-    <div class="visual-image">
-      <img src="${slide.image}" alt="${slide.visualTitle || slide.title}">
-    </div>
-  ` : `
-    <div>
-      <div class="visual__icon">${slide.icon}</div>
-      <div class="visual__title">${slide.visualTitle}</div>
-      <p class="visual__caption">Sustituye este bloque por una imagen en la carpeta assets si quieres usar material propio.</p>
-    </div>
-  `}
-</aside>
-  `;
+function bullets(items) {
+  return `<ul class="bullet-list">${items.map((item, i) => `<li style="--delay:${i}">${item}</li>`).join("")}</ul>`;
 }
 
-function renderVideoSlide(slide) {
-  return `
-    <article>
-      <span class="kicker">Diapo ${slide.number}</span>
-      <h2>${slide.title}</h2>
-      <ul class="content-list">${slide.bullets.map(item => `<li>${item}</li>`).join("")}</ul>
-      <p><a href="${slide.link}" target="_blank" rel="noopener">Abrir entrevista en YouTube ↗</a></p>
+function header(slide, title = slide.title) {
+  return `<span class="kicker">${slide.kicker}</span><h2>${title}</h2>`;
+}
+
+function renderStandard(slide) {
+  const layout = slide.type === "impact" ? "layout layout--impact" : "layout";
+  return `<div class="${layout}">
+    <article class="copy">${header(slide)}${slide.intro ? `<p class="intro">${slide.intro}</p>` : ""}${bullets(slide.bullets || [])}
+      ${slide.tags ? `<div class="tags">${slide.tags.map(tag => `<span>${tag}</span>`).join("")}</div>` : ""}
     </article>
-    <aside class="video-card" aria-label="Video de YouTube">
-      <iframe src="${slide.video}" title="Entrevista a Fidel Castro al triunfo de la Revolución" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-    </aside>
-  `;
+    <figure class="archive-image">${image(slide.image, slide.imageAlt)}<span class="pin"></span><figcaption>Archivo de análisis · ${String(slide.number).padStart(2,"0")}</figcaption></figure>
+  </div>`;
+}
+
+function renderTimeline(slide) {
+  return `<div class="layout layout--timeline"><article class="copy">${header(slide)}<p class="intro">${slide.intro}</p>
+    <div class="timeline">${slide.events.map(([date, text], i) => `<div class="timeline__event" style="--delay:${i}"><strong>${date}</strong><p>${text}</p></div>`).join("")}</div>
+  </article><figure class="map-image">${image(slide.image, slide.imageAlt)}<span class="distance-line">Cuba ↔ Florida</span></figure></div>`;
+}
+
+function renderProfile(slide) {
+  return `<div class="layout layout--profile"><figure class="portrait">${image(slide.image, slide.imageAlt)}<figcaption>Ramón Grau San Martín</figcaption></figure>
+    <article class="copy">${header(slide)}${bullets(slide.bullets)}<div class="tags">${slide.tags.map(tag => `<span>${tag}</span>`).join("")}</div></article></div>`;
+}
+
+function renderStat(slide) {
+  return `<div class="layout"><article class="copy">${header(slide)}${bullets(slide.bullets)}<p class="source-note">${slide.statNote}</p></article>
+    <div class="stat-visual"><figure>${image(slide.image, slide.imageAlt)}</figure><div class="stats">${slide.stats.map(([value,label]) => `<div><strong>${value}</strong><span>${label}</span></div>`).join("")}</div></div></div>`;
+}
+
+function renderCharacters(slide) {
+  return `<div class="characters-layout"><article class="copy">${header(slide)}${bullets(slide.bullets)}<blockquote>${slide.quote}<cite>Fidel Castro</cite></blockquote></article>
+    <div class="character-strip">${slide.images.map((src,i) => `<figure>${image(src, slide.imageLabels[i])}<figcaption>${slide.imageLabels[i]}</figcaption></figure>`).join("")}</div></div>`;
+}
+
+function renderRoute(slide) {
+  return `<div class="layout layout--route"><article class="copy">${header(slide)}${bullets(slide.bullets)}</article><div class="route-visual"><figure class="map-image">${image(slide.image, slide.imageAlt)}</figure>${image(slide.object,"Yate Granma","route-object")}</div></div>`;
+}
+
+function renderVideo(slide) {
+  return `<div class="video-layout"><article class="copy">${header(slide)}<p class="intro">${slide.intro}</p><a class="external-link" href="${slide.link}" target="_blank" rel="noopener">Abrir en YouTube ↗</a></article>
+    <div class="video-frame"><iframe src="${slide.video}" title="Entrevista a Fidel Castro" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div></div>`;
+}
+
+function renderCauses(slide) {
+  return `<div class="causes-layout"><article class="copy">${header(slide)}<div class="cause-list">${slide.causes.map(([name,text],i) => `<section style="--delay:${i}"><span>0${i+1}</span><div><h3>${name}</h3><p>${text}</p></div></section>`).join("")}</div></article><figure class="archive-image archive-image--tall">${image(slide.image,slide.imageAlt)}<figcaption>Yanet conecta causas y consecuencias</figcaption></figure></div>`;
 }
 
 function renderQuiz(slide) {
-  return `
-    <article>
-      <span class="kicker">Diapo ${slide.number} · pregunta interactiva</span>
-      <h2 class="quiz-question">${slide.question}</h2>
-      <div class="options">
-        ${slide.options.map((option, index) => `<button class="option" data-index="${index}" type="button">${index + 1}. ${option}</button>`).join("")}
-      </div>
-      <div class="feedback" id="feedback" aria-live="polite"></div>
-    </article>
-  `;
+  const previous = answered.get(slide.number);
+  return `<div class="quiz-layout"><article class="quiz-panel">${header(slide, slide.question)}<p class="quiz-instruction">Selecciona una respuesta.</p>
+    <div class="options">${slide.options.map((option,index) => {
+      const state = previous == null ? "" : index === slide.correct ? "is-correct" : index === previous ? "is-wrong" : "is-muted";
+      return `<button class="option ${state}" data-answer="${index}" type="button"><span>${String.fromCharCode(65+index)}</span>${option}</button>`;
+    }).join("")}</div>
+    <div class="feedback ${previous == null ? "" : previous === slide.correct ? "feedback--correct" : "feedback--wrong"}" id="feedback" aria-live="polite">${previous == null ? "" : `<strong>${previous === slide.correct ? "¡Correcto!" : "Revisa la respuesta destacada."}</strong> ${slide.explanation}`}</div>
+    ${slide.final && previous != null ? `<button class="result-button" id="resultButton" type="button">Ver mi resultado</button>` : ""}
+  </article><figure class="quiz-visual">${image(slide.image,"Yanet analiza la pregunta")}</figure></div>`;
 }
 
-function attachQuizHandlers(slide) {
-  const optionButtons = [...slideEl.querySelectorAll(".option")];
-  const feedback = document.getElementById("feedback");
-  optionButtons.forEach(button => {
-    button.addEventListener("click", () => {
-      const selected = Number(button.dataset.index);
-      optionButtons.forEach((btn, index) => {
-        btn.classList.toggle("is-correct", index === slide.correct);
-        btn.classList.toggle("is-wrong", selected === index && selected !== slide.correct);
-      });
-      feedback.textContent = selected === slide.correct ? "Correcto. La respuesta clave queda resaltada en amarillo." : "Revisa la opción resaltada en amarillo.";
-    });
-  });
+function renderSlide() {
+  const slide = deck[current];
+  const renderers = {timeline: renderTimeline, profile: renderProfile, stat: renderStat, characters: renderCharacters, route: renderRoute, video: renderVideo, causes: renderCauses, quiz: renderQuiz};
+  slideEl.innerHTML = (renderers[slide.type] || renderStandard)(slide);
+  slideEl.dataset.type = slide.type;
+  counterEl.textContent = `${slide.number} / ${deck.length}`;
+  progressBar.style.width = `${((current + 1) / deck.length) * 100}%`;
+  prevButton.disabled = current === 0;
+  nextButton.disabled = current === deck.length - 1;
+  nextButton.textContent = current === deck.length - 1 ? "Fin del recorrido" : "Siguiente →";
+  attachInteractions(slide);
+  updateScore();
+  renderIndex();
+  slideEl.focus({preventScroll:true});
 }
 
-function renderSlideList() {
-  slideList.innerHTML = slides.map((slide, index) => {
-    const label = slide.quiz ? `Pregunta ${slide.number}` : `${slide.number}. ${slide.title}`;
-    return `<button type="button" class="${index === current ? "active" : ""}" data-go="${index}">${label}</button>`;
-  }).join("");
+function attachInteractions(slide) {
+  slideEl.querySelectorAll("[data-answer]").forEach(button => button.addEventListener("click", () => {
+    if (answered.has(slide.number)) return;
+    answered.set(slide.number, Number(button.dataset.answer));
+    renderSlide();
+  }));
+  document.getElementById("resultButton")?.addEventListener("click", showResult);
+}
 
-  slideList.querySelectorAll("button").forEach(button => {
-    button.addEventListener("click", () => {
-      current = Number(button.dataset.go);
-      drawer.hidden = true;
-      renderSlide();
-    });
-  });
+function showResult() {
+  const quizSlides = deck.filter(slide => slide.type === "quiz");
+  const correct = quizSlides.filter(slide => answered.get(slide.number) === slide.correct).length;
+  slideEl.innerHTML = `<div class="result-screen"><span class="kicker">Recorrido completado</span><h2>${correct} de ${quizSlides.length}</h2><p>${correct === quizSlides.length ? "Excelente lectura histórica." : "Cada pregunta abre una nueva perspectiva para revisar."}</p><div class="result-actions"><button class="primary" id="reviewButton" type="button">Revisar respuestas</button><button id="restartButton" type="button">Volver al inicio</button></div></div>`;
+  document.getElementById("reviewButton").addEventListener("click", () => { current = 5; renderSlide(); });
+  document.getElementById("restartButton").addEventListener("click", () => { current = 0; answered.clear(); renderSlide(); cover.hidden = false; });
+}
+
+function updateScore() {
+  const quizzes = deck.filter(slide => slide.type === "quiz");
+  const correct = quizzes.filter(slide => answered.get(slide.number) === slide.correct).length;
+  scoreLabel.textContent = `${correct} / ${quizzes.length} respuestas`;
+}
+
+function renderIndex() {
+  slideList.innerHTML = deck.map((slide,index) => `<button type="button" data-go="${index}" class="${index === current ? "active" : ""}"><span>${String(slide.number).padStart(2,"0")}</span><div><strong>${slide.type === "quiz" ? "Pregunta interactiva" : slide.title}</strong><small>${slide.kicker}</small></div></button>`).join("");
+  slideList.querySelectorAll("[data-go]").forEach(button => button.addEventListener("click", () => {current = Number(button.dataset.go); closeDrawer(); renderSlide();}));
 }
 
 function go(delta) {
-  const next = current + delta;
-  if (next >= 0 && next < slides.length) {
-    current = next;
-    renderSlide();
-  }
+  const target = current + delta;
+  if (target >= 0 && target < deck.length) { current = target; renderSlide(); }
 }
 
-prevBtn.addEventListener("click", () => go(-1));
-nextBtn.addEventListener("click", () => go(1));
-menuBtn.addEventListener("click", () => drawer.hidden = false);
-closeDrawerBtn.addEventListener("click", () => drawer.hidden = true);
-fullscreenBtn.addEventListener("click", () => {
-  if (!document.fullscreenElement) document.documentElement.requestFullscreen?.();
-  else document.exitFullscreen?.();
-});
+function openDrawer() { drawer.hidden = false; scrim.hidden = false; }
+function closeDrawer() { drawer.hidden = true; scrim.hidden = true; }
 
+document.getElementById("startButton").addEventListener("click", () => { cover.hidden = true; slideEl.focus(); });
+document.getElementById("menuButton").addEventListener("click", openDrawer);
+document.getElementById("closeDrawerButton").addEventListener("click", closeDrawer);
+scrim.addEventListener("click", closeDrawer);
+prevButton.addEventListener("click", () => go(-1));
+nextButton.addEventListener("click", () => go(1));
+document.getElementById("fullscreenButton").addEventListener("click", () => document.fullscreenElement ? document.exitFullscreen() : document.documentElement.requestFullscreen?.());
 document.addEventListener("keydown", event => {
-  if (event.key === "ArrowRight" || event.key === " ") go(1);
+  if (!cover.hidden && (event.key === "Enter" || event.key === " ")) { cover.hidden = true; return; }
+  if (event.key === "ArrowRight") go(1);
   if (event.key === "ArrowLeft") go(-1);
-  if (event.key === "Escape") drawer.hidden = true;
+  if (event.key === "Escape") closeDrawer();
 });
 
 renderSlide();
