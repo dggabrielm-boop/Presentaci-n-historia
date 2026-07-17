@@ -39,7 +39,7 @@ function renderStandard(slide) {
 }
 
 function renderTimeline(slide) {
-  return `<div class="layout layout--timeline"><article class="copy">${header(slide)}<p class="intro">${slide.intro}</p>
+  return `<div class="layout layout--timeline"><article class="copy">${header(slide)}${slide.intro ? `<p class="intro">${slide.intro}</p>` : ""}
     <div class="timeline">${slide.events.map(([date, text], i) => `<div class="timeline__event" style="--delay:${i}"><strong>${date}</strong><p>${text}</p></div>`).join("")}</div>
   </article><figure class="map-image">${image(slide.image, slide.imageAlt)}<span class="distance-line">Cuba ↔ Florida</span></figure></div>`;
 }
@@ -64,7 +64,7 @@ function renderRoute(slide) {
 }
 
 function renderVideo(slide) {
-  return `<div class="video-layout"><article class="copy">${header(slide)}<p class="intro">${slide.intro}</p><a class="external-link" href="${slide.link}" target="_blank" rel="noopener">Abrir en YouTube ↗</a></article>
+  return `<div class="video-layout"><article class="copy">${header(slide)}${slide.intro ? `<p class="intro">${slide.intro}</p>` : ""}<a class="external-link" href="${slide.link}" target="_blank" rel="noopener">Abrir en YouTube ↗</a></article>
     <div class="video-frame"><iframe src="${slide.video}" title="Entrevista a Fidel Castro" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div></div>`;
 }
 
@@ -89,6 +89,7 @@ function renderSlide() {
   const renderers = {timeline: renderTimeline, profile: renderProfile, stat: renderStat, characters: renderCharacters, route: renderRoute, video: renderVideo, causes: renderCauses, quiz: renderQuiz};
   slideEl.innerHTML = (renderers[slide.type] || renderStandard)(slide);
   slideEl.dataset.type = slide.type;
+  slideEl.dataset.number = slide.number;
   counterEl.textContent = `${slide.number} / ${deck.length}`;
   progressBar.style.width = `${((current + 1) / deck.length) * 100}%`;
   prevButton.disabled = current === 0;
