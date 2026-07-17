@@ -1,3 +1,6 @@
+const embedMode = new URLSearchParams(window.location.search).get("embed") === "1";
+if (embedMode) document.documentElement.classList.add("embed-mode");
+
 const deck = window.PRESENTATION.slides;
 const slideEl = document.getElementById("slide");
 const counterEl = document.getElementById("counter");
